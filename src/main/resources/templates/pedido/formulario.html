@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
+<title>Formulário de pedido</title>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron mb-0 bg-light">
+			<h1 class="display-4 ">Novo Pedido</h1>
+		</div>
+
+		<form action="/pedido/novo" method="POST">
+		
+			<div >
+				<label for="nomeProduto">Nome do produto</label> <input type="text"
+					name="nomeProduto" placeholder="Nome do produto"> <small>Informe
+					o nome do produto</small>
+			</div>
+			<div>
+				<label for="urlProduto">URL do produto</label> <input type="text"
+					name="urlProduto" placeholder="URL do produto"> <small>Informe
+					a url do produto</small>
+			</div>
+			<div>
+				<label for="urlImagem">Imagem</label> <input type="text"
+					name="urlImagem" placeholder="Url da imagem"> <small>Informe
+					a url da imagem do produto</small>
+			</div>
+			<div>
+				<label for="descricaoProduto">Descricao</label> 
+				<textarea  name="descricaoProduto" rows="" cols="">
+				</textarea> 
+			</div>
+
+			<button type="submit" class="btn btn-success">CADASTRAR</button>
+		</form>
+
+
+	</div>
+</body>
+</html>
