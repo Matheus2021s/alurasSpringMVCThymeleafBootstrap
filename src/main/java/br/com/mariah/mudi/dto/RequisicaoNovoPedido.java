@@ -1,12 +1,21 @@
 package br.com.mariah.mudi.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.mariah.mudi.model.Pedido;
 
 public class RequisicaoNovoPedido {
 
+	@NotBlank
 	private String nomeProduto;
+	
+	@NotBlank
 	private String urlProduto;
+	
+	@NotBlank
 	private String urlImagem;
+
+	@NotBlank
 	private String descricaoProduto;
 
 	public String getNomeProduto() {
