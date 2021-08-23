@@ -18,14 +18,26 @@
 			
 			<div class="collapse navbar-collapse" id="navBar">
 				<ul class="navbar-nav">
-					<li class="navbar-item"><a class="nav-link active"
-						aria-current="page" href="">Todos</a></li>
-					<li class="navbar-item"><a class="nav-link active"
-						aria-current="page" href="">Aguardando</a></li>
-					<li class="navbar-item"><a class="nav-link active"
-						aria-current="page" href="">Aprovado</a></li>
-					<li class="navbar-item"><a class="nav-link active"
-						aria-current="page" href="">Entregue</a></li>
+					<li class="navbar-item">
+						<a class="nav-link" 
+							th:classAppend="${status} == null ? 'active'"
+							href="/home">Todos</a>
+					</li>
+					<li class="navbar-item">
+						<a class="nav-link "
+							th:classAppend="${status} == 'aguardando' ? 'active'"
+							href="/home/aguardando">Aguardando</a>
+					</li>
+					<li class="navbar-item">
+						<a class="nav-link"
+							th:classAppend="${status} == 'aprovado' ? 'active'"
+							href="/home/aprovado">Aprovado</a>
+					</li>
+					<li class="navbar-item">
+						<a class="nav-link"
+							th:classAppend="${status} == 'entregue' ? 'active'"
+							href="/home/entregue">Entregue</a>
+					</li>
 				</ul>
 			</div>
 			<a href="/pedido/formulario"> 
@@ -50,10 +62,10 @@
 						<div class="col-12 col-sm-8 mb-3">
 							<div class="row">
 								<div class="col-md-5">
-									Valor: <span th:text="${pedido.valorNegociado}">200,00</span>
+									Valor: <span th:if="${pedido.valorNegociado} != null" th:text="${ '$RS ' + #numbers.formatDecimal(pedido.valorNegociado,2,'POINT',2,'COMMA')}">200,00</span>
 								</div>
 								<div class="col-md-7">
-									Data entrega: <span th:text="${pedido.dataEntrega}">20/02/2020</span>
+									Data entrega: <span th:text="${ #temporals.format( pedido.dataEntrega, 'dd/MM/yyyy') }">20/02/2020</span>
 								</div>
 							</div>
 
