@@ -15,7 +15,7 @@
 			<div class="card-body">
 
 
-				<form th:object="${requisicaoNovoPedido}" class="needs-validation" action="/pedido/novo" method="POST">
+				<form th:object="${requisicaoNovoPedido}" class="needs-validation" th:action="@{/pedido/novo}" method="POST">
 
 					<div class="form-group">
 						<label for="nomeProduto">Nome do produto</label> 
