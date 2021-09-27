@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<head th:replace="~{ base :: head}">
+</head>
+
+<body onload="onLoad()">
+
+<div th:replace="~{base::logo}"></div>
+
+
+	<div class="container" id="ofertas">
+	
+	<div th:replace ="~{base :: titulo('Faça sua Oferta!')}"></div>
+
+	
+
+		<div class="card mb-3 mt-3" v-for="pedido in pedidos">
+			<div class="card-header alert-dark"> {{pedido.nomeProduto}}</div>
+		
+			<div class="card-body">
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-12 col-sm-8 mb-3">
+							<div class="row">
+								<div class="col-md-5">
+									Valor: <input />
+								</div>
+								<div class="col-md-7">
+									Data entrega: <input/>
+								</div>
+							</div>
+
+							<div>Produto</div>
+							<div>
+								<a v-bind:href="pedido.urlProduto" > {{pedido.nomeProduto}}</a>
+							</div>
+
+							<div>Descrição:</div>
+							<div>
+								<textarea class="form-control">
+								{{pedido.nomeProduto}}
+						</textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4 ">
+							<div>
+								<img class="img-thumbnail" v-bind:src="pedido.urlImagem" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<script type="text/javascript">
+			function onLoad(){
+				var app =  new Vue({
+					 el: '#ofertas',
+					data: {
+						pedidos : 
+							[{
+						        "nomeProduto": "Casio Casiotone, 61-Key Portable Keyboard with USB, RED (CT-S200RD)",
+						        "valorNegociado": 119.00,
+						        "dataEntrega": "2021-08-20",
+						        "urlProduto": "https://www.amazon.com/Casio-Casiotone-Portable-Keyboard-CT-S200RD/dp/B07VSTXH3V/ref=sr_1_2?dchild=1&keywords=teclado%2Bcasio%2Bct%2B-s195&qid=1628999118&sr=8-2&th=1",
+						        "urlImagem": "https://m.media-amazon.com/images/I/61CdMH9ZW7L._AC_SL1024_.jpg",
+						        "descricao": "Casio proudly presents the next generation of Casio tone keyboards. Featuring 400 tones and 75 rhythms, the Casio tone ct-s200 is the perfect first step, The perfect gift, and the perfect way to have fun making music. The ct-s200 also lets you express your style as it is available in either black, white or RED. The ultra-compact ct-s200 lets you make music wherever and whenever you want. Just pop in six AA batteries, grab the built-in carrying handle and take your inspiration to go. The ct-s200 also includes the power supply and music rest. Explore a variety of great sounding tones and accompaniment rhythms with 61 full-size keys, an easy-to-read LCD display and intuitive controls. Use the \"My setup\" Function to quickly get to your favorite sounds. Dance music Mode lets you easily create and remix EDM tracks. Select a style, and use the keys to trigger drum loops, bassline, synth parts, effects, transitions and more. Use the built-in speakers to share with friends, or plug in headphones for quiet play At any time. The 1/8\" Audio input lets you play along with music from your favorite device. Connect to the free Chordata play iOS/Android app And take your music further, learning how to play your favorite songs from downloaded MIDI files. The class-compliant USB port connects to any Mac/PC/iOS/Android device with no drivers needed.\n\n",
+						        "status": "AGUARDANDO"
+						    },
+						    {
+						        "nomeProduto": "Korg Minilogue 4-Voice Polyphonic Analog Synth with Presets",
+						        "valorNegociado": null,
+						        "dataEntrega": null,
+						        "urlProduto": "https://www.amazon.com/Korg-Minilogue-4-Voice-Polyphonic-Presets/dp/B01AMNWF6Q/ref=sr_1_2?dchild=1&keywords=korg&qid=1629345031&sr=8-2",
+						        "urlImagem": "https://m.media-amazon.com/images/I/61xK+Wj6nzL._AC_SL1200_.jpg",
+						        "descricao": "\t\t\t\tWith the minilogue, you can get your hands on the powerful sound that's only possible with real analog, and find inspiration with features including a polyphonic step and motion sequencer, on board tape-style delay, multiple sound shaping and filter options, and an oscilloscope display. All of these seamlessly integrated features make minilogue as fun and easy to use as it is powerful. It's the next-generation analog synthesizer for musicians of all types.",
+						        "status": "AGUARDANDO"
+						    },
+						    {
+						        "nomeProduto": "Electric Keyboard Piano 61-Key, Ohuhu Musical Piano Keyboard with Headphone Jack, USB Port & Teaching Modes for Beginners",
+						        "valorNegociado": null,
+						        "dataEntrega": "2021-09-26",
+						        "urlProduto": "",
+						        "urlImagem": "https://m.media-amazon.com/images/I/71HQQWhlK9L._AC_SL1500_.jpg",
+						        "descricao": "Perfect for Beginners or Experts: From seasoned musicians to budding beginners, the Ohuhu Electric Piano Keyboard provides musical delight for every ability level. Rhythm, notes and melody are just the beginning!\n300 Tones, 300 Rhythm",
+						        "status": "AGUARDANDO"
+						    }
+						]
+					}
+				});
+				
+			}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</body>
+</html>
