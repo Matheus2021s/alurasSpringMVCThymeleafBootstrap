@@ -38,8 +38,9 @@ public class Pedido {
 	@Enumerated(EnumType.STRING)
 	private StatusPedido status;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")
-	private List<Oferta> ofertas = new ArrayList<Oferta>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
+	@JsonIgnore
+	private List<Oferta> ofertas;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore

@@ -4,15 +4,29 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
+import org.springframework.lang.NonNull;
+
+import com.sun.istack.NotNull;
+
 import br.com.mariah.mudi.model.Oferta;
 
 public class RequisicaoDeNovaOferta {
 
 	
+	
 	private Long pedidoId;
 	
+	@Pattern(regexp = "^\\d+(\\.\\d+{2})?$")
+	@NotNull
+	@NotEmpty
 	private String valor;
 	
+	@Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$")
+	@NotNull
+	@NotEmpty
 	private String dataEntrega;
 	
 	private String comentario;
